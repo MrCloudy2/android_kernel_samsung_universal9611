@@ -488,7 +488,7 @@ int save_proximity_setting_mode(struct ssp_data *data)
 	char buf[3] = "";
 	int buf_len = 0;
 
-	buf_len = snprintf(buf, PAGE_SIZE, "%d", data->prox_setting_mode);
+	buf_len = snprintf(buf, sizeof(buf), "%d", data->prox_setting_mode);
 
 	old_fs = get_fs();
 	set_fs(KERNEL_DS);
